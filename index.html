@@ -8,26 +8,32 @@
     <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
     <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
-    <style>
-        body {
-            font-family: sans-serif;
-            background-color: #fce4ec; /* Light pink background */
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+     <style>
+    body {
+        font-family: sans-serif;
+        background-color: #fce4ec;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 
-        /* 2. THE FIX: Only style the variables, NOT the position */
-        df-messenger {
-            --df-messenger-font-color: #000;
-            --df-messenger-font-family: sans-serif;
-            --df-messenger-chat-background: #E1BEE7;
-            --df-messenger-message-user-background: #F6ECF8;
-            --df-messenger-message-bot-background: #FFFFFF;
-        }
-    </style>
+    /* THE FIX: Force the messenger to stay in the bottom right */
+    df-messenger {
+        position: fixed; /* Keeps it in place during scroll */
+        bottom: 20px;    /* 20px up from the bottom */
+        right: 20px;     /* 20px in from the right */
+        z-index: 999;    /* Ensures it stays on top of other elements */
+        
+        /* Your custom colors */
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: sans-serif;
+        --df-messenger-chat-background: #E1BEE7;
+        --df-messenger-message-user-background: #F6ECF8;
+        --df-messenger-message-bot-background: #FFFFFF;
+    }
+</style>
     
 </head>
 <body>
@@ -49,3 +55,4 @@
 
 </body>
 </html>
+
